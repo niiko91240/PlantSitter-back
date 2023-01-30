@@ -1,9 +1,7 @@
 from django.shortcuts import render
-from rest_framework import viewsets
 
-from serializers import *
-from models import *
+from .models import *
+from .vues.utilisateur import UtilisateurViewSet
+from .vues.adresse import AdresseViewset
 
-class UtilisateurViewSet(viewsets.ModelViewSet):
-   queryset = Utilisateur.objects.all()
-   serializer_class = UtilisateurSerializer
+
