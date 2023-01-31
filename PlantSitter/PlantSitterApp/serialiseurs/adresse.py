@@ -6,4 +6,4 @@ class AdresseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Adresse
-        fields = ('numVoie','rue','codePostal','ville','complement','coordonneeX','coordonneeY')
+        fields = ('id','numVoie','rue','codePostal','ville','complement','coordonneeX','coordonneeY')
