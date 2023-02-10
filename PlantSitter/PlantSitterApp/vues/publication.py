@@ -3,6 +3,8 @@ from rest_framework import viewsets, status
 
 from ..serializers import PublicationSerializer
 from ..modeles.publication import Publication
+from ..modeles.plante import Plante
+from ..modeles.utilisateur import Utilisateur
 from rest_framework.parsers import MultiPartParser, FormParser
 
 class PublicationViewset(viewsets.ModelViewSet):
@@ -19,8 +21,7 @@ class PublicationViewset(viewsets.ModelViewSet):
       description = request.data['description']
       image = request.data['image']
       idCreateur = request.data['idCreateur']
-      idAccepteur = request.data['idAccepteur']
-      idAccepteur = request.data['idAccepteur']
+      plantes = request.data['plante']
       publication = Publication(
          dateDebut=dateDebut,
          dateFin=dateFin,
@@ -28,7 +29,13 @@ class PublicationViewset(viewsets.ModelViewSet):
          heureFin=heureFin,
          titre=titre,
          description=description,
+         idCreateur=Utilisateur.objects.get(id=idCreateur),
       )
       publication.image = image
       publication.save()
+      plantes = request.POST.getlist('plante')
+      for plante in plantes:
+         plante = plante.split(',')
+         for plant in plante:
+            publication.plante.add(int(plant))
       return HttpResponse(status=201)
