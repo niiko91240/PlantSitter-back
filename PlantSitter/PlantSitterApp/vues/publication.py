@@ -12,6 +12,13 @@ class PublicationViewset(viewsets.ModelViewSet):
    serializer_class = PublicationSerializer
    parser_classes = (MultiPartParser, FormParser)
 
+   def get_queryset(self):
+      idCreateur = self.request.GET.get('createur')
+      if idCreateur is not None:
+         return Publication.objects.filter(idCreateur=idCreateur)
+      else:
+         return Publication.objects.all()
+
    def create(self, request, *args, **kwargs):
       dateDebut = request.data['dateDebut']
       dateFin = request.data['dateFin']
