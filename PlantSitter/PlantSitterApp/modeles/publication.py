@@ -17,3 +17,13 @@ class Publication(models.Model):
     idCreateur = models.ForeignKey(Utilisateur, related_name='createur', on_delete=models.CASCADE, blank=True, null=True)
     idAccepteur = models.ForeignKey(Utilisateur, related_name='accepteur', on_delete=models.CASCADE, blank=True, null=True)
 
+    @property
+    def get_nomAccepteur(self):
+            "Returns the person's full name."
+            if self.idAccepteur is not None:
+                return self.idAccepteur.prenom + ' ' + self.idAccepteur.nom
+            else:
+                return "Votre demande n'a pas encore été acceptée par un utilisateur."
+
+
+
