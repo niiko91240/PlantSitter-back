@@ -12,7 +12,6 @@ router.register(r'message', MessageViewset)
 router.register(r'plante', PlanteViewset)
 router.register(r'publication', PublicationViewset)
 
-
 urlpatterns = [
     path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

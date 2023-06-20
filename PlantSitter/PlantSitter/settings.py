@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-cnydil3=taz@8wemax05)dxu23spezq9te184b7+!m(@$-*#-0
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'f54f-2a01-cb05-8568-2a00-9d50-a8dd-755d-259.ngrok-free.app',
+    '712b-2a01-cb05-8568-2a00-9d50-a8dd-755d-259.ngrok-free.app',
+    'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -67,9 +69,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173'
-]
+CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
+CORS_ALLOW_CREDENTIALS = True
+
+
 
 
 
