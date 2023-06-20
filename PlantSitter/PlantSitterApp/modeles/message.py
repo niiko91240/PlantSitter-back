@@ -7,6 +7,7 @@ class Message(models.Model):
     date = models.DateField()
     heure = models.TimeField(null=True, blank=True)
     image = models.FileField(null=True, blank=True)
-    idUtilisateur = models.ForeignKey(Utilisateur, related_name='utilisateur', on_delete=models.CASCADE,)
+    idsrc = models.ForeignKey(Utilisateur, related_name='utsource', on_delete=models.CASCADE,)
+    idDest = models.ForeignKey(Utilisateur, related_name='utdest', on_delete=models.CASCADE,)
     idPublication = models.ForeignKey(Publication, related_name='publication', on_delete=models.CASCADE,)
 

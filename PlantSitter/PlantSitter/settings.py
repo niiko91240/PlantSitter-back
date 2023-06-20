@@ -95,10 +95,21 @@ WSGI_APPLICATION = 'PlantSitter.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+} """
+
+DATABASES = {
+    "default": {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST' : 'b20uh7vhwmkc7lmhffut-mysql.services.clever-cloud.com',
+        'NAME' : 'b20uh7vhwmkc7lmhffut',
+        'USER' : 'uwguo36j1q9apmmg',
+        'PASSWORD' : 'fsvcocY1D4Hvo1JREgXA',
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
 }
 
