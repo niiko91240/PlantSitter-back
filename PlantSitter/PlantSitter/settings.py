@@ -26,7 +26,15 @@ SECRET_KEY = 'django-insecure-cnydil3=taz@8wemax05)dxu23spezq9te184b7+!m(@$-*#-0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< Updated upstream
 ALLOWED_HOSTS = []
+=======
+ALLOWED_HOSTS = [
+    'f54f-2a01-cb05-8568-2a00-9d50-a8dd-755d-259.ngrok-free.app',
+    'localhost',
+    '127.0.0.1'
+]
+>>>>>>> Stashed changes
 
 
 # Application definition
@@ -42,9 +50,21 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'corsheaders',
+    'drf_spectacular'
 ]
 
+<<<<<<< Updated upstream
+=======
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        "rest_framework.parsers.JSONParser"
+    ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
 
+>>>>>>> Stashed changes
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,11 +77,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173'
-]
-
-
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True  
 
 ROOT_URLCONF = 'PlantSitter.urls'
 
@@ -138,3 +155,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'mediafiles')
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "PlantSitter",
+    "DESCRIPTION": "Gardiennage de plante",
+    "VERSION": "1.0.1",
+    "SWAGGER_UI_DIST": "SIDECAR",
+    "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
+}
