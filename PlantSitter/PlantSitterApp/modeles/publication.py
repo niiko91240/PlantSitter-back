@@ -23,7 +23,15 @@ class Publication(models.Model):
             if self.idAccepteur is not None:
                 return self.idAccepteur.prenom + ' ' + self.idAccepteur.nom
             else:
-                return "Votre demande n'a pas encore été acceptée par un utilisateur."
+                return "Demande en attente d'acceptation."
+
+    @property
+    def get_nomCreateur(self):
+        "Returns the person's full name."
+        if self.idCreateur is not None:
+            return self.idCreateur.prenom + ' ' + self.idCreateur.nom
+        else:
+            return ""
 
 
 

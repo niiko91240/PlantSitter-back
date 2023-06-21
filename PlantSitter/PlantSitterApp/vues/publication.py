@@ -13,8 +13,11 @@ class PublicationViewset(viewsets.ModelViewSet):
 
    def get_queryset(self):
       idCreateur = self.request.GET.get('createur')
+      idAccepteur = self.request.GET.get('accepteur')
       if idCreateur is not None:
          return Publication.objects.filter(idCreateur=idCreateur)
+      elif idAccepteur is not None:
+         return Publication.objects.filter(idAccepteur=idAccepteur)
       else:
          return Publication.objects.all()
 

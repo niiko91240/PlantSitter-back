@@ -2,6 +2,7 @@ from urllib.request import Request
 import requests
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import *
 from .vues.utilisateur import UtilisateurViewSet
@@ -26,5 +27,9 @@ def insert_api(request):
         InsertPlante.save()
 
     return HttpResponse(text)
+@csrf_exempt
+def update_publication(request, *args, **kwargs):
+  print(request)
+  return HttpResponse(status=201)
 
 

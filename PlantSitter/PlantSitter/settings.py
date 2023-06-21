@@ -30,6 +30,8 @@ ALLOWED_HOSTS = [
     '712b-2a01-cb05-8568-2a00-9d50-a8dd-755d-259.ngrok-free.app',
     'localhost',
     '127.0.0.1',
+    'http://localhost:5173'
+    '69fc-2a01-cb05-8568-2a00-9d50-a8dd-755d-259.ngrok-free.app',
 ]
 
 
@@ -69,12 +71,8 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-
-
-
-
 
 ROOT_URLCONF = 'PlantSitter.urls'
 

@@ -14,4 +14,5 @@ router.register(r'publication', PublicationViewset)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('update_publication/', views.update_publication, name="update_publication"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
