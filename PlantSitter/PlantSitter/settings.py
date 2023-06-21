@@ -26,15 +26,11 @@ SECRET_KEY = 'django-insecure-cnydil3=taz@8wemax05)dxu23spezq9te184b7+!m(@$-*#-0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< Updated upstream
-ALLOWED_HOSTS = []
-=======
 ALLOWED_HOSTS = [
     'f54f-2a01-cb05-8568-2a00-9d50-a8dd-755d-259.ngrok-free.app',
     'localhost',
     '127.0.0.1'
 ]
->>>>>>> Stashed changes
 
 
 # Application definition
@@ -53,8 +49,6 @@ INSTALLED_APPS = [
     'drf_spectacular'
 ]
 
-<<<<<<< Updated upstream
-=======
 REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': (
         'rest_framework.parsers.FormParser',
@@ -63,8 +57,6 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
-
->>>>>>> Stashed changes
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
