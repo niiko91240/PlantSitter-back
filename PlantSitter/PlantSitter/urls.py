@@ -27,11 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('apit/', include('PlantSitterApp.urls')),
     #re_path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns = [
-    #...
-    # Rest Routes
+    # Schema Paths
     path('api/v1/', include([
         path('', include(router.urls)),
         path('schema/', include([
@@ -41,4 +37,4 @@ urlpatterns = [
         ])),
     ])),
     #...
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
